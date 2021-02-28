@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "profiles",
+  "info": {
+    "name": "profile",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "user": {
+      "private": true,
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "profile"
+    },
+    "username": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    }
+  }
+}
