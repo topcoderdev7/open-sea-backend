@@ -17,6 +17,8 @@
     "ethers": "^5.0.31",
     "knex": "<0.20.0",
     "opensea-js": "^1.1.11",
+    "pg": "^8.5.1",
+    "pg-connection-string": "^2.4.0",
     "sqlite3": "5.0.0",
     "strapi": "3.5.1",
     "strapi-admin": "3.5.1",
