@@ -1,0 +1,42 @@
+{
+  "name": "open-sea-backend",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A Strapi application",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi",
+    "lint": "eslint"
+  },
+  "devDependencies": {
+    "eslint": "^7.21.0"
+  },
+  "dependencies": {
+    "ethers": "^5.0.31",
+    "knex": "<0.20.0",
+    "opensea-js": "^1.1.11",
+    "sqlite3": "5.0.0",
+    "strapi": "3.5.1",
+    "strapi-admin": "3.5.1",
+    "strapi-connector-bookshelf": "3.5.1",
+    "strapi-plugin-content-manager": "3.5.1",
+    "strapi-plugin-content-type-builder": "3.5.1",
+    "strapi-plugin-email": "3.5.1",
+    "strapi-plugin-upload": "3.5.1",
+    "strapi-plugin-users-permissions": "3.5.1",
+    "strapi-utils": "3.5.1"
+  },
+  "author": {
+    "name": "A Strapi developer"
+  },
+  "strapi": {
+    "uuid": "e454ea73-7145-44e6-9136-8562556386d5"
+  },
+  "engines": {
+    "node": ">=10.16.0 <=14.x.x",
+    "npm": "^6.0.0"
+  },
+  "license": "MIT"
+}
