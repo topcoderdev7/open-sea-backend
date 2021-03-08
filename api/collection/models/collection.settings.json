@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "collections",
+  "info": {
+    "name": "collection",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "imageUrl": {
+      "type": "string"
+    },
+    "artist": {
+      "model": "artist",
+      "via": "collections"
+    },
+    "assets": {
+      "type": "component",
+      "repeatable": true,
+      "component": "list.assets"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    }
+  }
+}
