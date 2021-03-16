@@ -10,8 +10,8 @@ const { sanitizeEntity } = require('strapi-utils');
 module.exports = {
   async findOne(ctx) {
     const { address } = ctx.params;
-
-    const entity = await strapi.services.profile.findOne({ address: address.toLowerCase() });
+    const toLower =  address.toLowerCase()
+    const entity = await strapi.services.profile.findOne({ address_contains: toLower });
     return sanitizeEntity(entity, { model: strapi.models.profile });
   },
 
