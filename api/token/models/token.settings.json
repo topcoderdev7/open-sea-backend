@@ -29,6 +29,9 @@
     "slug": {
       "type": "uid",
       "targetField": "name"
+    },
+    "reserve": {
+      "type": "string"
     }
   }
 }
