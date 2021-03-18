@@ -10,8 +10,8 @@ const { sanitizeEntity } = require('strapi-utils');
 module.exports = {
   async findOne(ctx) {
     const { address } = ctx.params;
-
-    const entity = await strapi.services.profile.findOne({ address });
+    const toLower =  address.toLowerCase()
+    const entity = await strapi.services.profile.findOne({ address_contains: toLower });
     return sanitizeEntity(entity, { model: strapi.models.profile });
   },
 
@@ -28,9 +28,9 @@ module.exports = {
     let entity;
     if (ctx.is('multipart')) {
       const { data, files } = parseMultipartData(ctx);
-      entity = await strapi.services.profile.create({...data, user: user.id}, { files });
+      entity = await strapi.services.profile.create({...data, address: data.address.toLowerCase(), user: user.id}, { files });
     } else {
-      entity = await strapi.services.profile.create({...ctx.request.body, user: user.id});
+      entity = await strapi.services.profile.create({...ctx.request.body, address: ctx.request.body.address.toLowerCase(), user: user.id});
     }
     return sanitizeEntity(entity, { model: strapi.models.profile });
   },

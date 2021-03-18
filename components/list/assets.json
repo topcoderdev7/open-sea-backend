@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_list_assets",
+  "info": {
+    "name": "assets",
+    "icon": "address-card"
+  },
+  "options": {},
+  "attributes": {
+    "token": {
+      "model": "token"
+    }
+  }
+}

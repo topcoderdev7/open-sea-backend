@@ -1,8 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "tokens",
+  "collectionName": "collections",
   "info": {
-    "name": "token",
+    "name": "collection",
     "description": ""
   },
   "options": {
@@ -11,27 +11,24 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "address": {
+    "name": {
       "type": "string"
-    },
-    "description": {
-      "type": "text"
     },
     "imageUrl": {
       "type": "string"
     },
-    "name": {
-      "type": "string"
+    "artist": {
+      "model": "artist",
+      "via": "collections"
     },
-    "tokenId": {
-      "type": "string"
+    "assets": {
+      "type": "component",
+      "repeatable": true,
+      "component": "list.assets"
     },
     "slug": {
       "type": "uid",
       "targetField": "name"
-    },
-    "reserve": {
-      "type": "string"
     }
   }
 }
