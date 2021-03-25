@@ -32,6 +32,17 @@
     },
     "reserve": {
       "type": "string"
+    },
+    "sold": {
+      "type": "boolean",
+      "default": false
+    },
+    "soldFor": {
+      "type": "string"
+    },
+    "artist": {
+      "via": "tokens",
+      "model": "artist"
     }
   }
 }

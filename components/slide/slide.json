@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_slide_slides",
+  "info": {
+    "name": "slide",
+    "icon": "align-justify"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "richtext"
+    },
+    "token": {
+      "model": "token"
+    }
+  }
+}

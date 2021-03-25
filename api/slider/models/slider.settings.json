@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "sliders",
+  "info": {
+    "name": "slider",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "slides": {
+      "type": "component",
+      "repeatable": true,
+      "component": "slide.slide"
+    }
+  }
+}

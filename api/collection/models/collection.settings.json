@@ -18,8 +18,8 @@
       "type": "string"
     },
     "artist": {
-      "model": "artist",
-      "via": "collections"
+      "via": "collections",
+      "model": "artist"
     },
     "assets": {
       "type": "component",
