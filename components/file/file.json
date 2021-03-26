@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_file_files",
+  "info": {
+    "name": "file",
+    "icon": "anchor"
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "video",
+        "pdf"
+      ]
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}

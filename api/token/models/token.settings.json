@@ -53,6 +53,11 @@
     },
     "extraContent": {
       "type": "richtext"
+    },
+    "file": {
+      "type": "component",
+      "repeatable": false,
+      "component": "file.file"
     }
   }
 }
