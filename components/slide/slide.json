@@ -15,6 +15,9 @@
     },
     "imageUrl": {
       "type": "string"
+    },
+    "url": {
+      "type": "string"
     }
   }
 }
