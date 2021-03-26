@@ -1,4 +1,50 @@
 const _ = require('lodash');
+const {utils} = require("ethers")
+
+/**
+ * Given a ctx, retrieve the bearer token
+ * @param {any} ctx
+ */
+ const retrieveJWTToken = (ctx) => {
+  const params = _.assign({}, ctx.request.body, ctx.request.query)
+
+  let token = ''
+
+  if (ctx.request && ctx.request.header && ctx.request.header.authorization) {
+      const parts = ctx.request.header.authorization.split(' ')
+
+      if (parts.length === 2) {
+          const scheme = parts[0];
+          const credentials = parts[1];
+          if (/^Bearer$/i.test(scheme)) {
+              token = credentials
+          }
+      } else {
+          throw new Error(
+              'Invalid authorization header format. Format is Authorization: Bearer [token]'
+          )
+      }
+  } else if (params.token) {
+      token = params.token
+  } else {
+      throw new Error('No authorization header was found')
+  }
+
+  return (token)
+};
+
+
+/**
+ * Given a signature and the message, returns the public address
+ * @param token
+ * @param message
+ * @returns
+ */
+ const verifyToken = (message, token) => {
+  const address = utils.verifyMessage(message, token);
+  return address.toLowerCase();
+};
+
 
 module.exports = async (ctx, next) => {
   let role;
@@ -22,13 +68,48 @@ module.exports = async (ctx, next) => {
       ].services.user.fetchAuthenticatedUser(id);
       
     } catch (err) {
-      /** With Magic Changes */
+      /** With Metamask Changes */
         try{
-          await strapi.plugins['magic'].services['magic'].loginWithMagic(ctx)
+          const token = retrieveJWTToken(ctx)
+          console.log("token", token)
+          const address = verifyToken("profile", token)
+          console.log("address", address)
+
+          ctx.state.user = await strapi.plugins['users-permissions'].services.user.fetch({
+            email: address
+          })
+
+          if(!ctx.state.user){
+            //Create the user
+            try{
+                const advanced = await strapi
+                    .store({
+                        environment: '',
+                        type: 'plugin',
+                        name: 'users-permissions',
+                        key: 'advanced',
+                    })
+                    .get()
+                const defaultRole = await strapi
+                    .query('role', 'users-permissions')
+                    .findOne({ type: advanced.default_role }, [])
+
+                ctx.state.user = await strapi.plugins['users-permissions'].services.user.add({
+                    username: address,
+                    email: address,
+                    role: defaultRole,
+                    confirmed: true,
+                    provider: 'Metamask'
+                })
+            } catch(err){
+                console.log('Exception in user creation in permissions', err)
+            }
+          }
       } catch (err) {
+        console.log("err", err)
           return handleErrors(ctx, err, 'unauthorized');
       }
-      /** END With Magic Changes */
+      /** END With Metamask Changes */
     }
 
     if (!ctx.state.user) {

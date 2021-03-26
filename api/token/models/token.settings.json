@@ -32,6 +32,32 @@
     },
     "reserve": {
       "type": "string"
+    },
+    "sold": {
+      "type": "boolean",
+      "default": false
+    },
+    "soldFor": {
+      "type": "string"
+    },
+    "artist": {
+      "model": "artist",
+      "via": "tokens"
+    },
+    "onSale": {
+      "type": "boolean",
+      "default": false
+    },
+    "extraTitle": {
+      "type": "string"
+    },
+    "extraContent": {
+      "type": "richtext"
+    },
+    "file": {
+      "type": "component",
+      "repeatable": false,
+      "component": "file.file"
     }
   }
 }

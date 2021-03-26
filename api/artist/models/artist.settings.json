@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "artists",
   "info": {
-    "name": "artist"
+    "name": "artist",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -10,19 +11,26 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "Name": {
+    "name": {
       "type": "string"
     },
     "slug": {
       "type": "uid",
-      "targetField": "Name"
+      "targetField": "name"
     },
     "imageUrl": {
       "type": "string"
     },
     "collections": {
+      "collection": "collection",
+      "via": "artist"
+    },
+    "tokens": {
       "via": "artist",
-      "collection": "collection"
+      "collection": "token"
+    },
+    "description": {
+      "type": "richtext"
     }
   }
 }

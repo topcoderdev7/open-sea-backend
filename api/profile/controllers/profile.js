@@ -38,7 +38,6 @@ module.exports = {
   async update(ctx) {
     const { id } = ctx.params;
     const {user} = ctx.state
-
     let entity;
     if (ctx.is('multipart')) {
       const { data, files } = parseMultipartData(ctx);
