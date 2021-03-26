@@ -47,6 +47,12 @@
     "onSale": {
       "type": "boolean",
       "default": false
+    },
+    "extraTitle": {
+      "type": "string"
+    },
+    "extraContent": {
+      "type": "richtext"
     }
   }
 }
