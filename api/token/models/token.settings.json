@@ -58,6 +58,10 @@
       "type": "component",
       "repeatable": false,
       "component": "file.file"
+    },
+    "priority": {
+      "type": "integer",
+      "default": 0
     }
   }
 }
