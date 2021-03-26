@@ -28,6 +28,9 @@
     "tokens": {
       "collection": "token",
       "via": "artist"
+    },
+    "description": {
+      "type": "richtext"
     }
   }
 }
