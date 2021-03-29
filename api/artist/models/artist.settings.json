@@ -26,10 +26,16 @@
       "via": "artist"
     },
     "tokens": {
-      "via": "artist",
-      "collection": "token"
+      "collection": "token",
+      "via": "artist"
     },
     "description": {
+      "type": "richtext"
+    },
+    "extraTitle": {
+      "type": "string"
+    },
+    "extraContent": {
       "type": "richtext"
     }
   }
