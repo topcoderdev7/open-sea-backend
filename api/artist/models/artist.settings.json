@@ -26,8 +26,8 @@
       "via": "artist"
     },
     "tokens": {
-      "via": "artist",
-      "collection": "token"
+      "collection": "token",
+      "via": "artist"
     },
     "description": {
       "type": "richtext"
@@ -37,6 +37,15 @@
     },
     "extraContent": {
       "type": "richtext"
+    },
+    "websiteUrl": {
+      "type": "string"
+    },
+    "instagramUrl": {
+      "type": "string"
+    },
+    "twitterUrl": {
+      "type": "string"
     }
   }
 }
