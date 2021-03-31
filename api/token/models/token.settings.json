@@ -41,8 +41,8 @@
       "type": "string"
     },
     "artist": {
-      "via": "tokens",
-      "model": "artist"
+      "model": "artist",
+      "via": "tokens"
     },
     "onSale": {
       "type": "boolean",
@@ -62,6 +62,9 @@
     "priority": {
       "type": "integer",
       "default": 0
+    },
+    "buttonMessage": {
+      "type": "string"
     }
   }
 }
