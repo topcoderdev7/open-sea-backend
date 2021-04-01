@@ -37,6 +37,15 @@
     },
     "extraContent": {
       "type": "richtext"
+    },
+    "websiteUrl": {
+      "type": "string"
+    },
+    "instagramUrl": {
+      "type": "string"
+    },
+    "twitterUrl": {
+      "type": "string"
     }
   }
 }

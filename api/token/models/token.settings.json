@@ -62,6 +62,9 @@
     "priority": {
       "type": "integer",
       "default": 0
+    },
+    "buttonMessage": {
+      "type": "string"
     }
   }
 }
