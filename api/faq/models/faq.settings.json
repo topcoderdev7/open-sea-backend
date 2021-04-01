@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "faqs",
+  "info": {
+    "name": "Faq"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "QandA": {
+      "type": "component",
+      "repeatable": true,
+      "component": "qand-a.qand-a"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_qand_a_qand_as",
+  "info": {
+    "name": "QandA",
+    "icon": "address-book"
+  },
+  "options": {},
+  "attributes": {
+    "question": {
+      "type": "string",
+      "required": true
+    },
+    "answer": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}
