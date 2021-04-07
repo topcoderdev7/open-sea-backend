@@ -46,6 +46,9 @@
     },
     "twitterUrl": {
       "type": "string"
+    },
+    "priority": {
+      "type": "integer"
     }
   }
 }
