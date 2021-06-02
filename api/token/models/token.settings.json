@@ -66,6 +66,9 @@
     "buttonMessage": {
       "type": "string"
     },
+    "gltf": {
+      "type": "string"
+    },
     "iconUrl": {
       "type": "string"
     }
