@@ -68,6 +68,9 @@
     },
     "gltf": {
       "type": "string"
+    },
+    "iconUrl": {
+      "type": "string"
     }
   }
 }
