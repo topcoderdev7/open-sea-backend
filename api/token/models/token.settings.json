@@ -71,6 +71,15 @@
     },
     "iconUrl": {
       "type": "string"
+    },
+    "Etherscan": {
+      "type": "string"
+    },
+    "IPFS": {
+      "type": "string"
+    },
+    "IPFSMetadata": {
+      "type": "string"
     }
   }
 }
