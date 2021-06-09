@@ -80,6 +80,9 @@
     },
     "IPFSMetadata": {
       "type": "string"
+    },
+    "iconURLSold": {
+      "type": "string"
     }
   }
 }
