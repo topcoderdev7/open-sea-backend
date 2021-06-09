@@ -41,8 +41,8 @@
       "type": "string"
     },
     "artist": {
-      "via": "tokens",
-      "model": "artist"
+      "model": "artist",
+      "via": "tokens"
     },
     "onSale": {
       "type": "boolean",
@@ -79,6 +79,9 @@
       "type": "string"
     },
     "IPFSMetadata": {
+      "type": "string"
+    },
+    "iconURLSold": {
       "type": "string"
     }
   }
