@@ -41,8 +41,8 @@
       "type": "string"
     },
     "artist": {
-      "model": "artist",
-      "via": "tokens"
+      "via": "tokens",
+      "model": "artist"
     },
     "onSale": {
       "type": "boolean",
