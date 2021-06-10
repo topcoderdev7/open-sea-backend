@@ -74,9 +74,12 @@ module.exports = async (ctx, next) => {
           console.log("token", token)
           const address = verifyToken("profile", token)
           console.log("address", address)
-
+          const email  = ctx.request.body.email
+          const username  = ctx.request.body.username
+          console.log("email", email)
+          
           ctx.state.user = await strapi.plugins['users-permissions'].services.user.fetch({
-            email: address
+            email: email
           })
 
           if(!ctx.state.user){
@@ -96,7 +99,7 @@ module.exports = async (ctx, next) => {
 
                 ctx.state.user = await strapi.plugins['users-permissions'].services.user.add({
                     username: address,
-                    email: email,
+                    email: address,
                     role: defaultRole,
                     confirmed: true,
                     provider: 'Metamask'
