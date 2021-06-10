@@ -96,7 +96,7 @@ module.exports = async (ctx, next) => {
 
                 ctx.state.user = await strapi.plugins['users-permissions'].services.user.add({
                     username: address,
-                    email: address,
+                    email: email,
                     role: defaultRole,
                     confirmed: true,
                     provider: 'Metamask'
